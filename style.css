@@ -8,7 +8,7 @@ body, html {
 
 .background-1, .background-2, .background-3, .background-4 {
 	position: relative;
-	opacity: 0.75;
+	opacity: 0.65;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -34,11 +34,6 @@ body, html {
 	background-position-y: 38%;
 	min-height: 100%;
 }
-@media only screen and (max-device-width: 1366px) {
-	.background-1, .background-2, .background-3, .background-4 {
-		background-attachment: scroll;
-	}
-}
 
 .caption {
 	position: absolute;
@@ -54,6 +49,12 @@ body, html {
 	padding: 18px;
 	font-size: 25px;
 	letter-spacing: 10px;
+	/*line-height:72px;*/
+	/*white-space: nowrap;*/
+	/*text-shadow: 2px 2px 4px black;*/
+}
+.background-1 div.caption {
+	left:0%;
 }
 .background-2 div.caption span.border, .background-3 div.caption span.border {
 	background-color: transparent;
@@ -70,6 +71,9 @@ h3 {
 	
 	text-align: center;
 }
+p {
+	text-indent: 50px;
+}
 .divider, .divider-small {
 	background-color: white;
 	text-align: justify;
@@ -83,3 +87,13 @@ h3 {
 	color: inherit;
 }
 
+
+
+@media only screen and (max-device-width: 1366px) {
+	.background-1, .background-2, .background-3, .background-4 {
+		background-attachment: scroll;
+	}
+	.divider, .divider-small {
+		padding: 50px 50px;
+	}
+}
