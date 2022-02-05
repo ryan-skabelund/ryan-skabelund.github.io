@@ -1,0 +1,9 @@
+RewriteEngine on
+
+# Check if there is a folder with the same name as a file name, if there is, do not continue. -d means directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Check for file in directory with .html extension. -f means file
+RewriteCond %{REQUEST_FILENAME}\.html -f
+
+RewriteRule ^(.*)$ $1.html [NC,L]
