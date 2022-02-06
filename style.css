@@ -217,10 +217,10 @@ p {
 	
 	@keyframes reveal {
 		from {width:0px;}
-		to {width:calc(100px + 33.5vw);}
+		to {width:calc(100px + 35.25vw);}
 	}
 	@keyframes slidein {
-		from { margin-left:calc(-100px - 33.5vw); }
+		from { margin-left:calc(-100px - 35.25vw); }
 		to { margin-left:0px; }
 	}
 }
