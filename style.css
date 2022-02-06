@@ -1,31 +1,31 @@
 body, html {
 	height: 100%;
 	margin: 0;
-	font: 400 15px/1.8 "Lato", sans-serif;
+	font: 400 15px/1.8 "Roboto", sans-serif;
 	color: #777;
 }
 
 
 .background-1, .background-2, .background-3, .background-4 {
 	position: relative;
-	opacity: 0.65;
+	opacity: 1;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 .background-1 {
-	background-image: url("images/portrait1.jpeg");
-	background-position-y: 32%;
+	background-image: url("images/portrait1.jpg");
+	background-position-y: 30%;
 	min-height: 100%;
 }
 .background-2 {
 	background-image: url("images/portrait2.jpg");
-	background-position-y: 22%;
+	background-position-y: 32%;
 	min-height: 70%;
 }
 .background-3 {
-	background-image: url("images/portrait3.jpeg");
+	background-image: url("images/portrait3.jpg");
 	background-position-y: 26%;
 	min-height: 70%;
 }
@@ -34,66 +34,193 @@ body, html {
 	background-position-y: 38%;
 	min-height: 100%;
 }
-
-.caption {
+.dimmer {
 	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 100%;
-	text-align: center;
-	color: #000;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background-color: rgb(4,9,30);
+	background-position: center;
+	background-size: cover;
+	min-height: inherit;
+	
+	animation: dim 2s;
+	animation-delay: 0.2s;
+	animation-fill-mode: both;
 }
-.caption span.border {
-	background-color: #111;
+@keyframes dim {
+	from {
+		opacity: 1;
+		background-color: rgb(29, 31, 37);
+	}
+	to {
+		opacity: 0.5;
+		background-color: rgb(4,9,30);
+	}
+}
+
+
+h1, h2 {
 	color: #fff;
-	padding: 18px;
-	font-size: 25px;
+	font-weight: 700;
 	letter-spacing: 10px;
-	/*line-height:72px;*/
-	/*white-space: nowrap;*/
-	/*text-shadow: 2px 2px 4px black;*/
+	padding-left: 10px;
 }
-.background-1 div.caption {
-	left:0%;
+h1 {
+	font-size: 4vw;
+	line-height:0%;
 }
-.background-2 div.caption span.border, .background-3 div.caption span.border {
-	background-color: transparent;
-	color: #f7f7f7;
+h2 {
+	font-size: 2vw;
 }
-
-
-
 h3 {
 	letter-spacing: 5px;
 	text-transform: uppercase;
-	font: 20px "Lato", sans-serif;
+	font: 20px "Roboto", sans-serif;
 	color: #111;
-	
 	text-align: center;
 }
 p {
 	text-indent: 50px;
 }
-.divider, .divider-small {
-	background-color: white;
+
+
+.caption {
+	position: absolute;
+	top: 54%; left: 0;
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+}
+.caption h3 {
+	color: #fff;
+	font-size: 1vw;
+	animation: showup 1s 2.5s both;
+}
+
+
+.slide-initial, .slide-rest {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.slide-initial {
+	animation: showup 1s 0.8s both;
+}
+.slide-rest {
+	padding-left: 0vw;
+	animation: reveal 1.5s 1.5s both;
+}
+.slide-rest h1 {
+	text-align: right;
+	animation: slidein 1.5s 1.5s both;
+}
+@keyframes showup {
+	from {opacity: 0}
+	to {opacity: 1}
+}
+@keyframes reveal {
+    from {width:0px;}
+    to {width:calc(100px + 23.5vw);}
+}
+@keyframes slidein {
+    from { margin-left:calc(-100px - 23.5vw); }
+    to { margin-left:0px; }
+}
+
+.arrow {
+	position: absolute;
+	top: 95%; left: 50%;
+	transform: translate(-50%, -50%);
+	height: 2vw;
+	width: 4vw;
+	cursor: pointer;
+	opacity: 0;
+	animation: easeOutBounce 0.6s 3.5s 2 forwards, showup 0.5s 3s both;
+}
+.arrow img {
+	position: absolute;
+	top:50%; left:50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	transition: 0.2s;
+}
+.arrow img:hover {
+	width: 110%;
+}
+@keyframes easeOutBounce {
+	0% {
+		transform: translate(-50%, -50%);
+	}
+	25% {
+		transform: translate(-50%, 0%);
+	}
+	34% {
+		transform: translate(-50%, -5.45%);
+	}
+	43% {
+		transform: translate(-50%, -21.78%);
+	}
+	52% {
+		transform: translate(-50%, -49.01%);
+	}
+	65.5% {
+		transform: translate(-50%, -37.51%);
+	}
+	80.5% {
+		transform: translate(-50%, -49.19%);
+	}
+	86.5% {
+		transform: translate(-50%, -46.88%);
+	}
+	94% {
+		transform: translate(-50%, -49.67%);
+	}
+	97% {
+		transform: translate(-50%, -49.23%);
+	}
+	100% {
+		transform: translate(-50%, -50%);
+	}
+}
+
+.divider, .divider-dark {
+	background-color: #fff;
 	text-align: justify;
 	padding: 50px 80px;
 }
-.divider-small {
+.divider-dark {
 	color: #ddd;
 	background-color: #282E34;
 }
-.divider-small h3 {
+.divider-dark h3 {
 	color: inherit;
 }
-
 
 
 @media only screen and (max-device-width: 1366px) {
 	.background-1, .background-2, .background-3, .background-4 {
 		background-attachment: scroll;
 	}
-	.divider, .divider-small {
+	.divider, .divider-dark {
 		padding: 50px 50px;
+	}
+	
+	h1 {
+		font-size: 6vw;
+	}
+	.caption h3 {
+		font-size: 3vw;
+	}
+	.arrow {
+		height: 5vw;
+		width: 10vw;
+	}
+	
+	@keyframes reveal {
+		from {width:0px;}
+		to {width:calc(100px + 33.5vw);}
+	}
+	@keyframes slidein {
+		from { margin-left:calc(-100px - 33.5vw); }
+		to { margin-left:0px; }
 	}
 }

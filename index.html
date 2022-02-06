@@ -7,47 +7,75 @@
 <body>
 	
 	<div class="background-1">
+		<div class="dimmer"></div>
 		<div class="caption">
-			<span class="border">RYAN SKABELUND</span>
+			<div class="slide-initial"><h1>RYAN</h1></div>
+			<div class="slide-rest">
+				<h1>SKABELUND</h1>
+			</div>
+			<h3>Computer Science Student</h3>
 		</div>
+		
+		<a class="arrow" id="introButton">
+			<img src="images/arrow.png">
+		</a>
 	</div>
 	
-	<div class="divider">
+	<div class="divider" id="introduction">
 		<h3>Let me introduce myself</h3>
-		<p>
-			Hey, I'm Ryan - a computer science student at Arizona State University.
-			Ever since a young age, I've had a deep passion for problem-solving 
+		<p>	Hey, I'm Ryan - a computer science student at Arizona State University.
+			Ever since a young age, I've had a deep passion for problem-solving and math.
+			That quickly led me to discover what I love: programming.
+			Here you'll be able to see some of the projects I've worked on ranging from
+			personal side projects to mobile apps.
 		</p>
-		<p>hi</p>
 	</div>
 	
 	<div class="background-2">
+		<div class="dimmer"></div>
 		<div class="caption">
-			<span class="border">PROJECTS</span>
+			<h2>PROJECTS</h2>
 		</div>
 	</div>
 	
-	<div class="divider-small">
+	<div class="divider-dark">
 		<h3>Howdy</h3>
 		<p>yeehaw buildin' a website yeaaaa</p>
 	</div>
 	
 	<div class="background-3">
+		<div class="dimmer"></div>
 		<div class="caption">
-			<span class="border">CONTACT ME</span>
+			<h2>CONTACT ME</h2>
 		</div>
 	</div>
 	
-	<div class="divider-small">
+	<div class="divider-dark">
 		<h3>Howdy</h3>
 		<p>yeehaw buildin' a website yeaaaa</p>
 	</div>
 	
 	<div class="background-4">
+		<div class="dimmer"></div>
 		<div class="caption">
-			<span class="border">uh, hi</span>
+			<h2>uh, hi</h2>
 		</div>
 	</div>
+	
+	<script>
+		function scrollTo(element) {
+			window.scroll({
+				behavior: "smooth",
+				left: 0,
+				top: element.offsetTop - element.offsetTop/10
+			});
+		}
+		var introButton = document.getElementById("introButton");
+		var introSection = document.getElementById("introduction")
+		introButton.addEventListener("click", () => {
+			scrollTo(introSection);
+		});
+	</script>
 	
 </body>
 </html>
