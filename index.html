@@ -123,7 +123,8 @@
 		// });
 		var introButton = document.getElementById("introButton");
 		var introSection = document.getElementById("introduction")
-		introButton.addEventListener("click", () => {
+		introButton.addEventListener("click", function(event) {
+			event.preventDefault();
 			$("html, body").animate({
 				scrollTop: introSection.offsetTop - introSection.offsetTop/10
 			}, 700)
