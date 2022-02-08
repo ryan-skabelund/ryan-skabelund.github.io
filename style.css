@@ -20,18 +20,17 @@ body, html {
 	min-height: 100%;
 }
 .background-2 {
-	background-image: url("images/portrait2.jpg");
+	background-image: url("images/background.jpg");
 	background-position-y: 32%;
-	min-height: 70%;
 }
 .background-3 {
-	background-image: url("images/portrait3.jpg");
+	background-image: url("images/background3.jpg");
 	background-position-y: 26%;
-	min-height: 70%;
+	min-height: 80%;
 }
 .background-4 {
-	background-image: url("images/portrait4.jpg");
-	background-position-y: 38%;
+	background-image: url("images/portrait2.jpg");
+	background-position-y: 32%;
 	min-height: 100%;
 }
 .dimmer {
@@ -73,8 +72,9 @@ h2 {
 }
 h3 {
 	letter-spacing: 5px;
+	padding-left:5px;
 	text-transform: uppercase;
-	font: 20px "Roboto", sans-serif;
+	font: 25px "Roboto", sans-serif;
 	color: #111;
 	text-align: center;
 }
@@ -183,7 +183,7 @@ p {
 }
 
 .divider, .divider-dark {
-	background-color: #fff;
+	background-color: #eee;
 	text-align: justify;
 	padding: 50px 80px;
 }
@@ -193,6 +193,32 @@ p {
 }
 .divider-dark h3 {
 	color: inherit;
+}
+
+
+.row {
+	display: flex;
+	justify-content: space-evenly;
+	position: relative;
+	z-index: 1;
+	padding-top: 100px;
+}
+.row-item {
+	flex-basis: 20%;
+	text-align: left;
+	background-color: #eee;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 100px;
+	padding: 10px 50px 50px 50px;
+}
+.row-item h4 {
+	line-height: 0;
+	padding-top: 10%;
+	color: #333;
+}
+.row-item p {
+	text-indent: 0;
 }
 
 
@@ -213,6 +239,14 @@ p {
 	.arrow {
 		height: 5vw;
 		width: 10vw;
+	}
+	
+	.row {
+		flex-direction: column;
+		padding-top: 50px;
+	}
+	.row-item {
+		margin-bottom: 50px;
 	}
 	
 	@keyframes reveal {
