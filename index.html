@@ -3,7 +3,7 @@
 <head>
 	<title>Ryan Skabelund</title>
 	<link rel="stylesheet" href="style.css"></link></head>
-	<meta name="viewport" content="with=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
 	
 	<div class="background-1">
@@ -107,19 +107,27 @@
 		</div>
 	</div>
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
-		function scrollTo(element) {
-			window.scroll({
-				behavior: "smooth",
-				left: 0,
-				top: element.offsetTop - element.offsetTop/10
-			});
-		}
+		// function scrollTo(element) {
+		// 	window.scroll({
+		// 		behavior: "smooth",
+		// 		left: 0,
+		// 		top: element.offsetTop - element.offsetTop/10
+		// 	});
+		// }
+		// var introButton = document.getElementById("introButton");
+		// var introSection = document.getElementById("introduction")
+		// introButton.addEventListener("click", () => {
+		// 	scrollTo(introSection);
+		// });
 		var introButton = document.getElementById("introButton");
 		var introSection = document.getElementById("introduction")
 		introButton.addEventListener("click", () => {
-			scrollTo(introSection);
-		});
+			$("html, body").animate({
+				scrollTop: introSection.offsetTop - introSection.offsetTop/10
+			}, 700)
+		})
 	</script>
 	
 </body>
