@@ -29,14 +29,11 @@
 			As I've followed a pattern of trying new things, learning, asking around, adapting, and implementing I've established a routine of growth and improvement.
 			I'm always up for a challenge to learn something new because the more knowedge I gain, the better I become.
 			Here below will go into some more specific details.
-			</p>
+		</p>
 	</div>
 	
 	<div class="background-2">
 		<div class="dimmer"></div>
-		<div class="caption">
-			<h2></h2>
-		</div>
 		<div class="row">
 			<div class="row-item">
 				<h3>Education</h3>
@@ -97,13 +94,13 @@
 	
 	<div class="divider-dark">
 		<h3>CONTACT ME</h3>
-		<p>yeehaw buildin' a website yeaaaa</p>
+		<p>Email: theryanskabelund@gmail.com</p>
 	</div>
 	
-	<div class="background-4">
+	<div class="background-4">	
 		<div class="dimmer"></div>
 		<div class="caption">
-			<h2>uh, hi</h2>
+			<h2>hey there!</h2>
 		</div>
 	</div>
 	
@@ -122,20 +119,18 @@
 		// 	scrollTo(introSection);
 		// });
 		
-		
 		// left: 37, up: 38, right: 39, down: 40,
 		// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
 		var keys = {37: 1, 38: 1, 39: 1, 40: 1};
-
+		
 		function preventDefault(e) {
-		e.preventDefault();
+			e.preventDefault();
 		}
-
 		function preventDefaultForScrollKeys(e) {
-		if (keys[e.keyCode]) {
-			preventDefault(e);
-			return false;
-		}
+			if (keys[e.keyCode]) {
+				preventDefault(e);
+				return false;
+			}
 		}
 
 		// modern Chrome requires { passive: false } when adding event
@@ -145,24 +140,22 @@
 			get: function () { supportsPassive = true; } 
 		}));
 		} catch(e) {}
-
+		
 		var wheelOpt = supportsPassive ? { passive: false } : false;
 		var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-		// call this to Disable
+		
 		function disableScroll() {
-		window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-		window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-		window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-		window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+			window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+			window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+			window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+			window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 		}
-
-		// call this to Enable
+		
 		function enableScroll() {
-		window.removeEventListener('DOMMouseScroll', preventDefault, false);
-		window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-		window.removeEventListener('touchmove', preventDefault, wheelOpt);
-		window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+			window.removeEventListener('DOMMouseScroll', preventDefault, false);
+			window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+			window.removeEventListener('touchmove', preventDefault, wheelOpt);
+			window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 		}
 		
 		var introButton = document.getElementById("introButton");
