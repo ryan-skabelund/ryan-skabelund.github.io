@@ -7,7 +7,7 @@
 <body>
 	
 	<div class="background-1">
-		<div class="dimmer"></div>
+		<div class="dimmer dim-anim"></div>
 		<div class="caption">
 			<div class="slide-initial"><h1>RYAN</h1></div>
 			<div class="slide-rest">
@@ -35,44 +35,50 @@
 	<div class="background-2">
 		<div class="dimmer"></div>
 		<div class="row">
-			<div class="row-item">
-				<h3>Education</h3>
-				<h4>Arizona State University</h4>
-				<p>BS in Computer Science<br>May 2024 -- GPA: 4.23</p>
-				<h4>Relevant Coursework</h4>
-				<ul>
-					<li>Programming: Java, JavaFX, C, C++, Assembly, Bash, Scheme</li>
-					<li>Computer Science: software enginnering, OOP, discrete mathematics, data structures</li>
-				</ul>
-				<h4>Undergraduate Teaching Assistant</h4>
-				<ul>
-					<li>Digital Design Fundamentals: Helped students troubleshoot their labs to create synchronous sequential circuits</li>
-				</ul>
+			<div class="row-item-wrapper">
+				<div class="row-item" id="row-item-anim-1">
+					<h3>Education</h3>
+					<h4>Arizona State University</h4>
+					<p>BS in Computer Science<br>May 2024 -- GPA: 4.23</p>
+					<h4>Relevant Coursework</h4>
+					<ul>
+						<li>Programming: Java, JavaFX, C, C++, Assembly, Bash, Scheme</li>
+						<li>Computer Science: software enginnering, OOP, discrete mathematics, data structures</li>
+					</ul>
+					<h4>Undergraduate Teaching Assistant</h4>
+					<ul>
+						<li>Digital Design Fundamentals: Helped students troubleshoot their labs to create synchronous sequential circuits</li>
+					</ul>
+				</div>
 			</div>
-			<div class="row-item">
-				<h3>Skills</h3>
-				<ul>
-					<li>Java</li>
-					<li>C#</li>
-					<li>Python</li>
-					<li>Lua</li>
-					<li>Jupyter</li>
-					<li>CSS</li>
-					<li>HTML</li>
-					<li>C++</li>
-					<li>Excel, PowerPoint, Word</li>
-				</ul>
+			<div class="row-item-wrapper">
+				<div class="row-item" id="row-item-anim-2">
+					<h3>Skills</h3>
+					<ul>
+						<li>Java</li>
+						<li>C#</li>
+						<li>Python</li>
+						<li>Lua</li>
+						<li>Jupyter</li>
+						<li>CSS</li>
+						<li>HTML</li>
+						<li>C++</li>
+						<li>Excel, PowerPoint, Word</li>
+					</ul>
+				</div>
 			</div>
-			<div class="row-item">
-				<h3>Abilities</h3>
-				<ul>
-					<li>Eager to learn, quick learner</li>
-					<li>Strong problem-solving skills</li>
-					<li>Mathematically inclined</li>
-					<li>Enjoys working in teams</li>
-					<li>Great work ethic</li>
-					<li>Natural leadership skills</li>
-				</ul>
+			<div class="row-item-wrapper">
+				<div class="row-item" id="row-item-anim-3">
+					<h3>Abilities</h3>
+					<ul>
+						<li>Eager to learn, quick learner</li>
+						<li>Strong problem-solving skills</li>
+						<li>Mathematically inclined</li>
+						<li>Enjoys working in teams</li>
+						<li>Great work ethic</li>
+						<li>Natural leadership skills</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -87,8 +93,17 @@
 	
 	<div class="background-3">
 		<div class="dimmer"></div>
-		<div class="caption">
-			<h2></h2>
+		<div class="row">
+			<div class="project-wrapper">
+				<div class="project" id="row-item-anim-1">
+					<img src="images/musicalbricks.png">
+				</div>
+			</div>
+			<div class="project-wrapper">
+				<div class="project" id="row-item-anim-1">
+					<img src="images/minigames.png">
+				</div>
+			</div>
 		</div>
 	</div>
 	
@@ -103,6 +118,7 @@
 			<h2>hey there!</h2>
 		</div>
 	</div>
+	
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
@@ -159,7 +175,7 @@
 		}
 		
 		var introButton = document.getElementById("introButton");
-		var introSection = document.getElementById("introduction")
+		var introSection = document.getElementById("introduction");
 		introButton.addEventListener("click", function() {
 			disableScroll();
 			$("html, body").animate({
@@ -168,6 +184,79 @@
 				enableScroll()
 			})
 		})
+	</script>
+	
+	<script>
+		const dimObserver = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.firstElementChild.classList.add("dim-anim-immediate");
+				}
+			})
+			
+		})
+		dimObserver.observe(document.querySelector(".background-2"));
+		dimObserver.observe(document.querySelector(".background-3"));
+		dimObserver.observe(document.querySelector(".background-4"));
+		
+		const observerr = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					if (entry.target.firstElementChild.id == "row-item-anim-1") {
+						entry.target.firstElementChild.classList.add("row-item-anim-1");
+					}
+					else if (entry.target.firstElementChild.id == "row-item-anim-2") {
+						entry.target.firstElementChild.classList.add("row-item-anim-2");
+					}
+					else {
+						entry.target.firstElementChild.classList.add("row-item-anim-3");
+					}
+				}
+			})
+			
+		})
+		document.querySelectorAll(".row-item-wrapper").forEach(rowItemWrapper => {
+			observerr.observe(rowItemWrapper);
+		})
+		
+		/*const observer = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					console.log("hey");
+					entry.target.firstElementChild.classList.add("row-item-animation");
+					return;
+				}
+				//entry.target.firstElementChild.classList.remove("row-item-anim");
+			})
+			
+		})
+		document.querySelectorAll(".row-item-wrapper").forEach(rowItemWrapper => {
+			observer.observe(rowItemWrapper);
+		})*/
+		
+		
+		/*
+		const rowItems = document.querySelectorAll(".row-item");
+		rowItems.forEach(rowItem => {
+			rowItem.classList.remove("row-item-transition");
+		})
+		
+		
+		const observer = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.firstElementChild.classList.add("row-item-transition");
+					return;
+				}
+				entry.target.firstElementChild.classList.remove("row-item-transition");
+			})
+			
+		})
+		
+		document.querySelectorAll(".row-item-wrapper").forEach(rowItemWrapper => {
+			observer.observe(rowItemWrapper);
+		})
+		*/
 	</script>
 	
 </body>

@@ -15,35 +15,37 @@ body, html {
 	background-size: cover;
 }
 .background-1 {
-	background-image: url("images/portrait1.jpg");
+	background-image: url("images/background/portrait1.jpg");
 	background-position-y: 30%;
 	min-height: 100%;
 }
 .background-2 {
-	background-image: url("images/background.jpg");
+	background-image: url("images/background/background.jpg");
 	background-position-y: 32%;
 }
 .background-3 {
-	background-image: url("images/background3.jpg");
+	background-image: url("images/background/background.jpg");
 	background-position-y: 26%;
 	min-height: 80%;
 }
 .background-4 {
-	background-image: url("images/portrait2.jpg");
+	background-image: url("images/background/portrait2.jpg");
 	background-position-y: 32%;
 	min-height: 100%;
 }
 .dimmer {
 	position: absolute;
 	top: 0; left: 0; right: 0; bottom: 0;
-	background-color: rgb(4,9,30);
+	background-color: rgb(29, 31, 37);
 	background-position: center;
 	background-size: cover;
 	min-height: inherit;
-	
-	animation: dim 2s;
-	animation-delay: 0.2s;
-	animation-fill-mode: both;
+}
+.dim-anim {
+	animation: dim 2s 0.2s both;
+}
+.dim-anim-immediate {
+	animation: dim 2s both;
 }
 @keyframes dim {
 	from {
@@ -203,17 +205,20 @@ p {
 	z-index: 1;
 	padding-top: 100px;
 }
-.row-item {
-	flex-basis: 16%;
-	text-align: left;
-	background-color: #eee;
+.row-item-wrapper {
+	flex-basis: 21%;	
 	margin-left: 50px;
 	margin-right: 50px;
 	margin-bottom: 100px;
+}
+.row-item {
+	text-align: left;
+	background-color: #eee;
 	padding: 10px 50px 50px 50px;
+	opacity: 0;
 }
 .row-item h4 {
-	margin-bottom:0;
+	margin-bottom: 0;
 	color: #333;
 }
 .row-item p {
@@ -224,6 +229,42 @@ p {
 	margin-top:0;
 }
 
+.row-item-anim-1 {
+	animation: rowItemShow 1.5s 0.25s both ease-out;
+}
+.row-item-anim-2 {
+	animation: rowItemShow 1.5s 0.50s both ease-out;
+}
+.row-item-anim-3 {
+	animation: rowItemShow 1.5s 0.75s both ease-out;
+}
+@keyframes rowItemShow {
+    from {
+		opacity: 0;
+		transform: translateY(5vh);
+	}
+    to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+.project-wrapper {
+	flex-basis: 18%;	
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 100px;
+}
+.project {
+	text-align: left;
+	background-color: #eee;
+	opacity: 1;
+}
+.project img {
+	display: block;
+	width: 100%;
+}
 
 @media only screen and (max-device-width: 1366px) {
 	.background-1, .background-2, .background-3, .background-4 {
@@ -243,12 +284,15 @@ p {
 		height: 5vw;
 		width: 10vw;
 	}
+	.row-item-anim-1, .row-item-anim-2, .row-item-anim-3 {
+		animation-delay: 0s;
+	}
 	
 	.row {
 		flex-direction: column;
 		padding-top: 50px;
 	}
-	.row-item {
+	.row-item-wrapper {
 		margin-bottom: 50px;
 	}
 	
