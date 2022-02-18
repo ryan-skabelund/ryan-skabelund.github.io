@@ -306,6 +306,14 @@
 				portal.style.display = "block";
 			})
 		})
+		
+		function preloadImage(url) {
+			var img = new Image();
+			img.src = url;
+		}
+		for (const [key, value] of Object.entries(projectDetails)) {
+			preloadImage(value.image);
+		};
 	</script>
 	
 	<script>
