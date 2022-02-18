@@ -88,25 +88,23 @@
 		<p> As mentioned, I've been experimenting and programming ever since I was young (it's been over a decade now!).
 			There are hundreds of projects I've worked on, some very small, and some very large.
 			Here you'll be able to see the most notable projects I've worked on, which are a culmination of all the skills I've learned, ranging from personal side projects to mobile apps.
-			<br><br>
-			Website actively being built - Projects will display content soon
 		</p>
 	</div>
 	
 	<div class="background-3">
 		<div class="dimmer"></div>
 		<div class="row">
-			<div class="project-wrapper">
+			<div class="project-wrapper" id="musicalbricks">
 				<div class="project" id="project-anim-1">
-					<img src="images/musicalbricks.png">
+					<img src="images/projects/musicalbricks.png">
 					<div class="project-name">
 						<h3>Musical Bricks</h3>
 					</div>
 				</div>
 			</div>
-			<div class="project-wrapper">
+			<div class="project-wrapper" id="templogger">
 				<div class="project" id="project-anim-2">
-					<img src="images/s2mini.jpg">
+					<img src="images/projects/s2mini.jpg">
 					<div class="project-name">
 						<h3>Temperature Logger</h3>
 					</div>
@@ -114,17 +112,17 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="project-wrapper">
+			<div class="project-wrapper" id="minigames">
 				<div class="project" id="project-anim-1">
-					<img src="images/minigames.png">
+					<img src="images/projects/minigames.png">
 					<div class="project-name">
 						<h3>Minigames</h3>
 					</div>
 				</div>
 			</div>
-			<div class="project-wrapper">
+			<div class="project-wrapper" id="website">
 				<div class="project" id="project-anim-2">
-					<img src="images/website.jpg">
+					<img src="images/projects/website.jpg">
 					<div class="project-name">
 						<h3>Website</h3>
 					</div>
@@ -135,32 +133,50 @@
 	
 	<div class="divider-dark">
 		<h3>CONTACT ME</h3>
-		<p>Email: theryanskabelund@gmail.com</p>
+		<p class="center">Reach out to me, I'd love to hear from you!</p>
 	</div>
 	
 	<div class="background-4">	
 		<div class="dimmer"></div>
-		<div class="caption">
-			<h1>hey there!</h1>
+			<div class="row">
+				<div class="row-item-wrapper">
+					<div class="row-item dark-background" id="row-item-anim-1">
+						<h3 class="dark">Email</h3>
+						<p class="center dark"><a href="mailto:theryanskabelund@gmail.com">theryanskabelund@gmail.com</a></p>
+					</div>
+				</div>
+				<div class="row-item-wrapper">
+					<div class="row-item dark-background" id="row-item-anim-1">
+						<h3 class="dark">Social Media</h3>
+						<h4 class="dark">Instagram</h4>
+						<p class="dark"><a href="https://www.instagram.com/ryan.skabelund" target="_blank">https://www.instagram.com/ryan.skabelund</a></p>
+						<h4 class="dark">Facebook</h4>
+						<p class="dark"><a href="https://www.facebook.com/ryan.skabelund" target="_blank">https://www.facebook.com/ryan.skabelund</a></p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	
+	<div class="project-details-portal">
+		<div class="project-details-overlay">
+			<div class="project-details-content">
+				<div class="modal-wrapper">
+					<button class="btn-close" id="modal-close"><img src="images/x.png"></button>
+					<div class="project-top"><img src="" class="project-details-img"></div>
+					<div class="project-bottom">
+						<p class="project-details-name"></h3>
+						<p class="project-framework-languages"></h3>
+						<p class="project-details-description"></p>
+						<p><a href="" target="_blank" class="project-details-link"></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
-		// function scrollTo(element) {
-		// 	window.scroll({
-		// 		behavior: "smooth",
-		// 		left: 0,
-		// 		top: element.offsetTop - element.offsetTop/10
-		// 	});
-		// }
-		// var introButton = document.getElementById("introButton");
-		// var introSection = document.getElementById("introduction")
-		// introButton.addEventListener("click", () => {
-		// 	scrollTo(introSection);
-		// });
-		
 		// left: 37, up: 38, right: 39, down: 40,
 		// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
 		var keys = {37: 1, 38: 1, 39: 1, 40: 1};
@@ -174,8 +190,8 @@
 				return false;
 			}
 		}
-
-		// modern Chrome requires { passive: false } when adding event
+		
+		// Modern Chrome requires { passive: false } when adding event
 		var supportsPassive = false;
 		try {
 		window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
@@ -187,12 +203,11 @@
 		var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 		
 		function disableScroll() {
-			window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-			window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-			window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+			window.addEventListener('DOMMouseScroll', preventDefault, false);	// older FF
+			window.addEventListener(wheelEvent, preventDefault, wheelOpt);		// modern desktop
+			window.addEventListener('touchmove', preventDefault, wheelOpt);		// mobile
 			window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 		}
-		
 		function enableScroll() {
 			window.removeEventListener('DOMMouseScroll', preventDefault, false);
 			window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
@@ -208,6 +223,87 @@
 				scrollTop: introSection.offsetTop - introSection.offsetTop/10
 			}, 500, function() {
 				enableScroll()
+			})
+		})
+	</script>
+	
+	<script>
+		const portal = document.querySelector(".project-details-portal");
+		const overlay = document.querySelector(".project-details-overlay");
+		const closeButton = document.getElementById("modal-close");
+		
+		closeButton.onclick = function() {portal.style.display = "none";}
+		window.onclick = function(event) {
+			if (event.target == overlay) {
+				portal.style.display = "none";
+			}
+		}
+		
+		var projectDetails = {
+			"musicalbricks": {
+				"name": "Musical Bricks",
+				"image": "images/projects/musicalbricksBanner.png",
+				"frameworkLanguages": "Unity | C#",
+				"description": "Musical Bricks is a 2D brick-breaker mobile game made with Unity. " +
+							"It features a variety of levels, bricks, and music resulting in a fun, unique game. " +
+							"Utilizing C#, I designed and fully developed the game to expand my capabilities as a programmer and learn a new framework. " +
+							"The game is currently released on the play store, soon to be on the app store. Check it out!",
+				"link": "https://nostalgicgames.github.io/musicalbricks"
+			},
+			"templogger": {
+				"name": "Temperature Logger",
+				"image": "images/projects/temperaturePlot.png",
+				"wideImage": true,
+				"frameworkLanguages": "Azure, ASP.Net, Jupyter | C#, Python",
+				"description": "In order to prove to my dad that my room is the hottest in the house, " +
+							"I utilized ESP32 S2 Mini microproccessors running MicroPython to record and upload surrounding temperature to a web API at hourly intervals. " +
+							"Then I created an ASP.NET web API hosted on Microsoft Azure to process temperature data and store it in a SQL database. " +
+							"Now with all this data, I wanted to visualize it. So I used Jupyter to plot data in combination with local weather data, " +
+							"making it easy to quickly analyze trends and patterns.",
+				"link": "https://github.com/ryan-skabelund/Climate-Data-API"
+			},
+			"minigames": {
+				"name": "Hexagames",
+				"image": "images/projects/minigameBanner.png",
+				"frameworkLanguages": "Roblox | Lua",
+				"description": "Hexagames is a project I worked on throughout my time in high school. " +
+							"It's a minigames published on Roblox, which received over 200,000 plays. " +
+							"Using Lua, I designed and developed the game using techniques and practices that I had learned over the years. " +
+							"At the time, it represented a culmination of my skills and it's a project I was proud of.",
+				"link": "https://www.roblox.com/games/268886507"
+			},
+			"website": {
+				"name": "Website",
+				"image": "images/projects/websiteBanner.png",
+				"frameworkLanguages": "HTML, CSS, Javascript",
+				"description": "I created this website to showcase my resume more in-depth and I honestly had fun making it! " +
+							"I wanted to thouroughly learn HTML, CSS, and Javascript so everything here is original, no templates. " +
+							"In combination with the Musical Bricks website, which is found under its project description, it taught me a lot about front-end development and webdesign. "
+			}
+		}
+		
+		const name = document.querySelector(".project-details-name");
+		const image = document.querySelector(".project-details-img");
+		const frameworkLanguages = document.querySelector(".project-framework-languages");
+		const description = document.querySelector(".project-details-description");
+		const link = document.querySelector(".project-details-link");
+		
+		document.querySelectorAll(".project-wrapper").forEach(wrapper => {
+			wrapper.addEventListener("click", function() {
+				name.textContent = projectDetails[wrapper.id]["name"];
+				image.src = projectDetails[wrapper.id]["image"];
+				if (projectDetails[wrapper.id]["wideImage"]) {
+					image.classList.add("project-image-wide");
+				}
+				else {
+					image.classList.remove("project-image-wide");
+				}
+				frameworkLanguages.textContent = projectDetails[wrapper.id]["frameworkLanguages"];
+				description.textContent = projectDetails[wrapper.id]["description"];
+				link.textContent = projectDetails[wrapper.id]["link"];
+				link.href = projectDetails[wrapper.id]["link"];
+				
+				portal.style.display = "block";
 			})
 		})
 	</script>
@@ -239,45 +335,6 @@
 		document.querySelectorAll(".project-wrapper").forEach(wrapper => {
 			observerr.observe(wrapper);
 		})
-		
-		/*const observer = new IntersectionObserver(entries => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					console.log("hey");
-					entry.target.firstElementChild.classList.add("row-item-animation");
-					return;
-				}
-				//entry.target.firstElementChild.classList.remove("row-item-anim");
-			})
-			
-		})
-		document.querySelectorAll(".row-item-wrapper").forEach(rowItemWrapper => {
-			observer.observe(rowItemWrapper);
-		})*/
-		
-		
-		/*
-		const rowItems = document.querySelectorAll(".row-item");
-		rowItems.forEach(rowItem => {
-			rowItem.classList.remove("row-item-transition");
-		})
-		
-		
-		const observer = new IntersectionObserver(entries => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.firstElementChild.classList.add("row-item-transition");
-					return;
-				}
-				entry.target.firstElementChild.classList.remove("row-item-transition");
-			})
-			
-		})
-		
-		document.querySelectorAll(".row-item-wrapper").forEach(rowItemWrapper => {
-			observer.observe(rowItemWrapper);
-		})
-		*/
 	</script>
 	
 </body>
