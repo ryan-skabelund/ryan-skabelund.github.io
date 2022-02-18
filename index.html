@@ -232,12 +232,12 @@
 		const overlay = document.querySelector(".project-details-overlay");
 		const closeButton = document.getElementById("modal-close");
 		
-		closeButton.onclick = function() {portal.style.display = "none";}
-		window.onclick = function(event) {
+		closeButton.addEventListener("click", function() {portal.style.display = "none";});
+		window.addEventListener("click", function(event) {
 			if (event.target == overlay) {
 				portal.style.display = "none";
 			}
-		}
+		});
 		
 		var projectDetails = {
 			"musicalbricks": {
@@ -280,7 +280,7 @@
 							"I wanted to thouroughly learn HTML, CSS, and Javascript so everything here is original, no templates. " +
 							"In combination with the Musical Bricks website, which is found under its project description, it taught me a lot about front-end development and webdesign. "
 			}
-		}
+		};
 		
 		const name = document.querySelector(".project-details-name");
 		const image = document.querySelector(".project-details-img");
