@@ -39,45 +39,46 @@
 				<div class="row-item" id="row-item-anim-1">
 					<h3>Education</h3>
 					<h4>Arizona State University</h4>
-					<p>BS in Computer Science<br>May 2024 -- GPA: 4.23</p>
-					<h4>Relevant Coursework</h4>
-					<ul>
-						<li>Programming: Java, JavaFX, C, C++, Assembly, Bash, Scheme</li>
-						<li>Computer Science: software enginnering, OOP, discrete mathematics, data structures</li>
-					</ul>
+					<p><em>BS Computer Science, Data Science Minor</em><br>4.0 GPA - May 2024</p>
 					<h4>Undergraduate Teaching Assistant</h4>
-					<ul>
-						<li>Digital Design Fundamentals: Helped students troubleshoot their labs to create synchronous sequential circuits</li>
-					</ul>
+					<p><em>Digital Design Fundamentals</em><br>January 2022 - May 2022</p>
 				</div>
 			</div>
 			<div class="row-item-wrapper">
 				<div class="row-item" id="row-item-anim-2">
 					<h3>Skills</h3>
-					<ul>
-						<li>Java</li>
-						<li>C#</li>
-						<li>Python</li>
-						<li>Lua</li>
-						<li>Jupyter</li>
-						<li>CSS</li>
-						<li>HTML</li>
-						<li>C++</li>
-						<li>Excel, PowerPoint, Word</li>
-					</ul>
+					<p><strong>Highly skilled and proficient in:</strong> Java, C#, Python<br><strong>Proficient in:</strong> C, C++, Lua, CSS, HTML<br><strong>Frameworks, libraries, tools:</strong> Jupyter, .NET, Unity, SharePoint, Excel</p>
 				</div>
 			</div>
 			<div class="row-item-wrapper">
 				<div class="row-item" id="row-item-anim-3">
 					<h3>Abilities</h3>
 					<ul>
-						<li>Eager to learn, quick learner</li>
 						<li>Strong problem-solving skills</li>
 						<li>Mathematically inclined</li>
-						<li>Enjoys working in teams</li>
 						<li>Great work ethic</li>
 						<li>Natural leadership skills</li>
+						<li>Enjoy working in teams and able to self-direct projects to completion</li>
+						<li>Fluent in Spanish</li>
 					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<div class="divider-dark">
+		<h3>Experience</h3>
+	</div>
+	
+	<div class="background-xp">
+		<div class="dimmer"></div>
+		<div class="row">
+			<div class="project-wrapper" id="americanairlines">
+				<div class="project" id="project-anim-1">
+					<img src="images/experience/aa professional 2.jpg">
+					<div class="project-name">
+						<h3>American Airlines</h3>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -240,6 +241,22 @@
 		});
 		
 		var projectDetails = {
+			"americanairlines": {
+				"name": "American Airlines",
+				"image": "images/experience/aa 777.JPG",
+				"frameworkLanguages": "Hub & Gateway Operations Strategy Intern | June 2022 - Present",
+				"description": "My time with American was amazing and it taught me a lot. Working in the admin office above one of the concourses, I used my talents to automate processes " +
+					"and intelligently analyze data. My primary task was in relation to the wheelchair services provided by a vendor, mainly to understand why their data was so strikingly different " +
+					"than to what American had. Using my skills in Jupyter, I was able to observe, process, and correlate trends between the two datasets. In presenting my findings, I explained how and why " +
+					"the data was different and showed how in reality they are similar. This paved the way for a better understanding on how the vender operates and how we could better utilize them for a more " +
+					"efficient operation. I also spent much of my time automating admin processes and creating Excel macros to quickly breakdown data. " +
+					"<p>Here are some of the highlights from my internship:</p>" +
+					"<ul><li>Solved a long-lasting question of variance between two datasets by using Jupyter (Python) to clean, filter, and analyze certain trends, correlations, and differences.</li>" +
+					"<li>Automated the administrative process of approving DAT/COMP forms, greatly improving overall workflow and eliminating the need to manually send emails.</li>" +
+					"<li>Asynchronously exported 4,200 completed DAT/COMP forms to PDFs in Jupyter, sorting them by month and year, increasing speed and efficiency by a factor of 60.</li>" +
+					"<li>Developed a macro in Excel VBA to accept multiple employee rosters, format them, and then create pivot tables and graphs based on position and employment type to quickly compare and analyze bid rosters.</li>" +
+					"<li>Created a flow in Power Automate to streamline the approval process for a manager time adjustment form in SharePoint.</li></ul>"
+			},
 			"musicalbricks": {
 				"name": "Musical Bricks",
 				"image": "images/projects/musicalbricksBanner.png",
@@ -299,7 +316,7 @@
 					image.classList.remove("project-image-wide");
 				}
 				frameworkLanguages.textContent = projectDetails[wrapper.id]["frameworkLanguages"];
-				description.textContent = projectDetails[wrapper.id]["description"];
+				description.innerHTML = projectDetails[wrapper.id]["description"];
 				link.textContent = projectDetails[wrapper.id]["link"];
 				link.href = projectDetails[wrapper.id]["link"];
 				
@@ -326,6 +343,7 @@
 			
 		})
 		dimObserver.observe(document.querySelector(".background-2"));
+		dimObserver.observe(document.querySelector(".background-xp"));
 		dimObserver.observe(document.querySelector(".background-3"));
 		dimObserver.observe(document.querySelector(".background-4"));
 		

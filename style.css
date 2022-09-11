@@ -7,7 +7,7 @@ body, html {
 }
 
 
-.background-1, .background-2, .background-3, .background-4 {
+.background-1, .background-2, .background-xp, .background-3, .background-4 {
 	position: relative;
 	opacity: 1;
 	background-attachment: fixed;
@@ -24,8 +24,12 @@ body, html {
 	background-image: url("images/background/rowena_crest.jpg");
 	background-position-y: 32%;
 }
-.background-3 {
+.background-xp {
 	background-image: url("images/background/background.jpg");
+	background-position-y: 26%;
+}
+.background-3 {
+	background-image: url("images/background/background3.jpg");
 	background-position-y: 26%;
 }
 .background-4 {
@@ -410,7 +414,7 @@ p a:hover {
 
 
 @media only screen and (max-device-width: 1366px) {
-	.background-1, .background-2, .background-3, .background-4 {
+	.background-1, .background-2, .background-xp, .background-3, .background-4 {
 		background-attachment: scroll;
 	}
 	.divider, .divider-dark {
