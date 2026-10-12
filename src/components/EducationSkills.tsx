@@ -54,13 +54,13 @@ const EducationSkills: React.FC = () => {
 						<p>
 							<em>M.S. Computer Science</em>
 							<br />
-							3.2 GPA - May 2025
+							May 2025
 						</p>
 						<h4>Arizona State University</h4>
 						<p>
 							<em>B.S. Computer Science</em>
 							<br />
-							4.0 GPA - May 2024
+							May 2024
 						</p>
 					</div>
 				</div>
@@ -68,16 +68,16 @@ const EducationSkills: React.FC = () => {
 					<div className="row-item" id="row-item-anim-2">
 						<h3>Skills</h3>
 						<p>
-							<strong>Languages:</strong> C++, Python, SQL, JavaScript/TypeScript. Additional: C, C#, Java, Lua, HTML/CSS
+							<strong>AI & Machine Learning:</strong> Generative AI, LLM integration, agentic workflows, RAG, prompt engineering, LLM output testing, structured function calling, MCP, Copilot Studio, OpenAI GPT, Anthropic Claude, Ollama, open-weight LLMs, vector embeddings, NLP, clustering, PyTorch, AI-assisted development
 							<br />
 							<br />
-							<strong>Cloud & Infrastructure:</strong> Azure (Functions, Static Web Apps, ADLS, Foundry, AI Search, OpenAI, AI Translator), Docker, CI/CD, Proxmox
+							<strong>Cloud & DevOps:</strong> Azure Functions, Azure AI Foundry, Azure OpenAI, Azure AI Search, Azure AI Translator, Azure Data Lake Storage, Application Insights, serverless, Docker, Linux, CI/CD, GitHub Actions, Git, MLOps, Proxmox
 							<br />
 							<br />
-							<strong>Data & AI:</strong> ETL pipelines, RAG, MCP, LLM API integration, prompt engineering, multi-agent architectures, vector embeddings
+							<strong>Data Engineering:</strong> ETL/ELT pipelines, API integrations, SQL, relational data modeling, Databricks, Starburst, Power BI
 							<br />
 							<br />
-							<strong>Frameworks & Tools:</strong> React, Vue, Express, FastAPI, Git, Jupyter, Starburst, Power BI, Power Automate
+							<strong>Languages & Frameworks:</strong> Python, TypeScript/JavaScript, C++, C#, Java; React, Vue, Express, FastAPI, Jupyter
 						</p>
 					</div>
 				</div>

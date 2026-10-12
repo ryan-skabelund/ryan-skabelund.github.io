@@ -10,11 +10,13 @@ export const experiences: Experience[] = [
 		description: `Promoted from intern to full-time upon graduation (May 2024); concurrently completed M.S. full-time.
 		<p>Key achievements:</p>
 		<ul>
-			<li>Developed a full-stack CX chatbot using a React/TypeScript frontend on Azure Static Web Apps with an Azure Functions backend. Implemented a Python ETL pipeline to pull Twilio call transcripts from SQL, generate vector embeddings, and load them into Azure AI Search. Used that index to power RAG in the chat agent, giving the product team the ability to query customer pain points across thousands of support transcripts for the first time.</li>
-			<li>Built a survey enrichment pipeline as an Azure Function that pulls data from SQL across multiple sources, then calls Azure OpenAI via API to translate, classify, and score sentiment on every incoming survey response. Uses structured function calling with GPT-4.1 to enforce consistent topic taxonomy. Output is uploaded to ADLS and used to augment survey data across all downstream reporting. Replaced a manual process that required hours of work per cycle.</li>
-			<li>Built an AI summary pipeline as an Azure Function that aggregates customer feedback from surveys, complaints, and tickets via SQL, then submits batched requests to a GPT-4o-mini deployment in Azure AI Foundry to generate structured pain-point summaries per customer. Results are uploaded to ADLS and are viewed in the customer churn Power BI dashboard.</li>
-			<li>Designed a data sync pipeline as an Azure Function that pulls the latest survey results from a third-party platform via API and upserts records into ADLS, keeping data current across downstream systems with no manual intervention.</li>
-			<li>Partnered with regional CX teams across North America, LATAM, EMEA, and APAC to consolidate survey data into a centralized Power BI dataflow, giving all teams a consistent source of truth for reporting and analysis.</li>
+			<li>Engineered a serverless ETL pipeline in Python, SQL, and Azure Functions that translates survey responses, then classifies them and scores sentiment in a single Azure OpenAI function call, eliminating hours of manual work and powering all downstream reporting.</li>
+			<li>Architected a reusable, high-volume ticket-tagging framework that clusters vector embeddings by cosine similarity and uses GPT to label topics, scaling automated categorization across multiple ticket domains and taxonomies.</li>
+			<li>Built an LLM summarization pipeline on Azure AI Foundry that consolidates each doctor's surveys, complaints, and tickets into account-health snapshots to flag churn risk earlier.</li>
+			<li>Deployed an internal RAG chatbot built on React and Azure AI Search vector embeddings, enabling teams to query Twilio call transcripts in natural language to surface customer pain points.</li>
+			<li>Delivered a Claude Opus analytics agent in Copilot Studio that gives stakeholders self-service answers over Power BI data through an MCP tool, validating tool invocation and output quality.</li>
+			<li>Introduced Git version control and CI/CD to the team, automating Azure deployments with GitHub Actions, and configured Application Insights alerting across production pipelines to catch failures early and reduce downtime.</li>
+			<li>Partnered with CX teams across North America, LATAM, EMEA, and APAC to model and deliver a centralized Power BI dataflow as a reusable data product, establishing a single global source of truth for customer experience data.</li>
 		</ul>`
 	},
 	{
@@ -36,6 +38,14 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [
+	{
+		id: 'proxmoxhomelab',
+		name: 'Proxmox Home Lab',
+		image: '/images/projects/proxmoxHomeLab.jpeg',
+		banner: '/images/projects/proxmoxHomeLab.jpeg',
+		frameworkLanguages: 'Proxmox, Docker, Linux, ZFS, Tailscale',
+		description: `Built and maintain a two-node Proxmox environment with a dedicated ZFS storage node and a compute node hosting six self-hosted services, secured with Tailscale remote access and AdGuard DNS filtering.`
+	},
 	{
 		id: 'regexautomata',
 		name: 'Regex to Finite Automata',
