@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
 				<div className="slide-rest">
 					<h1>SKABELUND</h1>
 				</div>
-				<h3>Software Engineer & Data Scientist</h3>
+				<h3>AI ENGINEER</h3>
 			</div>
 
 			<button className="arrow" onClick={scrollToIntro} type="button">
