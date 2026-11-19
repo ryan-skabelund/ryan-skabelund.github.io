@@ -68,16 +68,16 @@ const EducationSkills: React.FC = () => {
 					<div className="row-item" id="row-item-anim-2">
 						<h3>Skills</h3>
 						<p>
-							<strong>AI & Machine Learning:</strong> Generative AI, LLM integration, agentic workflows, RAG, prompt engineering, LLM output testing, structured function calling, MCP, Copilot Studio, OpenAI GPT, Anthropic Claude, Ollama, open-weight LLMs, vector embeddings, NLP, clustering, PyTorch, AI-assisted development
+							<strong>AI & Machine Learning:</strong> Generative AI, LLM integration, agentic workflows, RAG, prompt engineering, LLM output testing, JSON Schema structured outputs, MCP, Copilot Studio, OpenAI GPT, Anthropic Claude, Ollama, open-weight LLMs, vector embeddings and search, NLP, clustering, PyTorch, AI-assisted development
 							<br />
 							<br />
-							<strong>Cloud & DevOps:</strong> Azure Functions, Azure AI Foundry, Azure OpenAI, Azure AI Search, Azure AI Translator, Azure Data Lake Storage, Application Insights, serverless, Docker, Linux, CI/CD, GitHub Actions, Git, MLOps, Proxmox
+							<strong>Cloud & DevOps:</strong> Azure Functions, Azure AI Foundry, Azure OpenAI, Azure AI Search, Azure AI Translator, Azure Data Lake Storage, Microsoft Entra ID (MSAL), Application Insights, serverless, Docker, Linux, CI/CD, GitHub Actions, Git, MLOps, Proxmox
 							<br />
 							<br />
-							<strong>Data Engineering:</strong> ETL/ELT pipelines, API integrations, SQL, relational data modeling, Databricks, Starburst, Power BI
+							<strong>Data Engineering:</strong> ETL/ELT pipelines, REST APIs, API integrations, SQL, relational data modeling, Databricks, Starburst, Power BI
 							<br />
 							<br />
-							<strong>Languages & Frameworks:</strong> Python, TypeScript/JavaScript, C++, C#, Java; React, Vue, Express, FastAPI, Jupyter
+							<strong>Languages & Frameworks:</strong> Python, TypeScript/JavaScript, C++, C#, Java; React, Node.js, Vue, Express, FastAPI, Jupyter
 						</p>
 					</div>
 				</div>

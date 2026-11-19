@@ -10,11 +10,12 @@ export const experiences: Experience[] = [
 		description: `Promoted from intern to full-time upon graduation (May 2024); concurrently completed M.S. full-time.
 		<p>Key achievements:</p>
 		<ul>
-			<li>Engineered a serverless ETL pipeline in Python, SQL, and Azure Functions that translates survey responses, then classifies them and scores sentiment in a single Azure OpenAI function call, eliminating hours of manual work and powering all downstream reporting.</li>
-			<li>Architected a reusable, high-volume ticket-tagging framework that clusters vector embeddings by cosine similarity and uses GPT to label topics, scaling automated categorization across multiple ticket domains and taxonomies.</li>
-			<li>Built an LLM summarization pipeline on Azure AI Foundry that consolidates each doctor's surveys, complaints, and tickets into account-health snapshots to flag churn risk earlier.</li>
-			<li>Deployed an internal RAG chatbot built on React and Azure AI Search vector embeddings, enabling teams to query Twilio call transcripts in natural language to surface customer pain points.</li>
-			<li>Delivered a Claude Opus analytics agent in Copilot Studio that gives stakeholders self-service answers over Power BI data through an MCP tool, validating tool invocation and output quality.</li>
+			<li>Built and deployed a RAG chatbot backed by a scheduled Azure Function that embeds and indexes 1M unstructured call transcripts a year in Azure AI Search, with an Azure AI Foundry agent retrieving the top 20 matches per query, a React/TypeScript front end with Microsoft Entra ID sign-in (MSAL), and a Node.js Azure Functions REST API.</li>
+			<li>Engineered a serverless Python/Azure Functions ETL pipeline that translates survey responses and applies multi-topic, subtopic, and sentiment tagging through a two-pass Azure OpenAI workflow, enforcing strict JSON Schema structured outputs generated at runtime from a hierarchical taxonomy and powering all downstream reporting.</li>
+			<li>Launched and own the global NPS survey program, including a stratified sampling algorithm across 129K doctors and an automated Pendo API sync into Starburst, collecting 16.5K completed responses since February 2026.</li>
+			<li>Delivered a Claude Opus analytics agent in Copilot Studio that queries Power BI semantic models through Microsoft's Power BI MCP server, tuned with custom instructions and tested for tool invocation and answer quality, giving CX leads self-service insights across 600+ conversations and supporting monthly NPS reporting.</li>
+			<li>Developed AI Summaries, an LLM pipeline on Azure AI Foundry that synthesizes customer feedback and operational metrics into a health check for each account, flagging churn risk earlier.</li>
+			<li>Architected a reusable ticket-tagging framework that embeds high-volume tickets, clusters them by cosine similarity, and uses GPT to label each cluster from sampled tickets, scaling categorization to any ticket domain or taxonomy.</li>
 			<li>Introduced Git version control and CI/CD to the team, automating Azure deployments with GitHub Actions, and configured Application Insights alerting across production pipelines to catch failures early and reduce downtime.</li>
 			<li>Partnered with CX teams across North America, LATAM, EMEA, and APAC to model and deliver a centralized Power BI dataflow as a reusable data product, establishing a single global source of truth for customer experience data.</li>
 		</ul>`
@@ -32,7 +33,7 @@ export const experiences: Experience[] = [
 			<li>Automated the administrative process of approving DAT/COMP forms, greatly improving overall workflow and eliminating the need to manually send emails.</li>
 			<li>Asynchronously exported 4,200 completed DAT/COMP forms to PDFs in Jupyter, sorting them by month and year, increasing speed and efficiency by a factor of 60.</li>
 			<li>Developed a macro in Excel VBA to accept multiple employee rosters, format them, and then create pivot tables and graphs based on position and employment type to quickly compare and analyze bid rosters.</li>
-			<li>Created a flow in Power Automate to streamline the approval process for a manager time adjustment form in SharePoint.</li>
+			<li>Automated the time-adjustment approval workflow in Power Automate and SharePoint, cutting turnaround from weeks to under one day. The flow is still in use today and has drawn corporate interest for rollout to other hubs.</li>
 		</ul>`
 	}
 ];
@@ -44,7 +45,7 @@ export const projects: Project[] = [
 		image: '/images/projects/proxmoxHomeLab.jpeg',
 		banner: '/images/projects/proxmoxHomeLab.jpeg',
 		frameworkLanguages: 'Proxmox, Docker, Linux, ZFS, Tailscale',
-		description: `Built and maintain a two-node Proxmox environment with a dedicated ZFS storage node and a compute node hosting six self-hosted services, secured with Tailscale remote access and AdGuard DNS filtering.`
+		description: `Built and maintain a two-node Proxmox environment with ZFS storage and six Docker-hosted services, secured with Tailscale remote access and AdGuard DNS filtering.`
 	},
 	{
 		id: 'regexautomata',
@@ -60,8 +61,9 @@ export const projects: Project[] = [
 		name: 'Satisfactory Mods',
 		image: '/images/projects/satisfactoryMods.jpg',
 		banner: '/images/projects/satisfactoryModsBanner.png',
-		frameworkLanguages: 'C++, Unreal Engine',
-		description: `Developed multiple mods for Satisfactory using C++ and Unreal Engine, with a primary focus on Dynamic Train Routes: a comprehensive routing system that has been downloaded over 40,000 times. This mod implements custom A* pathfinding algorithms to enable trains to automatically calculate optimal routes through complex rail networks. The system adapts dynamically to network changes, handles multi-destination routes, and optimizes for both efficiency and path validity in real-time.
+		frameworkLanguages: 'C++, Unreal Engine, Satisfactory Mod Loader',
+		description: `Developed multiple mods for Satisfactory using C++ and Unreal Engine, with a primary focus on Dynamic Train Routes: a comprehensive routing system that has been downloaded over 67,000 times. This mod implements real-time, traffic-aware A* pathfinding to enable trains to automatically calculate optimal routes through complex rail networks. The system adapts dynamically to network changes, handles multi-destination routes, and optimizes for both efficiency and path validity in real-time.
+		<p>I also contributed to the open-source Satisfactory Mod Loader (SML), authoring its <a href="https://github.com/satisfactorymodding/SatisfactoryModLoader/commit/0405455cccf687772b95a4f28bb65c152f3e1a76" target="_blank" rel="noopener noreferrer">"Reset to Defaults" config feature</a>. It adds a reset button to every mod's config page, with per-option and per-section resets, tooltips explaining why a reset is unavailable, and confirmation popups, backed by new C++ reset logic across all config property types.</p>
 		<p>Dynamic Train Routes required deep understanding of game engine architecture, advanced pathfinding algorithms, and careful performance optimization to ensure smooth gameplay even with large, intricate rail networks. The mod transforms Satisfactory's transportation system by eliminating the need for manual track switching and preset routes, allowing for truly dynamic logistics automation.</p>
 		<p>In addition to Dynamic Train Routes, I've created several other quality-of-life mods that enhance the Satisfactory experience. All of my mods are available on my <a href="https://ficsit.app/user/6CFnDcDHq3Cwf7" target="_blank" rel="noopener noreferrer">Ficsit.app profile</a>.</p>`,
 		link: 'https://ficsit.app/user/6CFnDcDHq3Cwf7'
